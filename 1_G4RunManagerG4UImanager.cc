@@ -1,10 +1,10 @@
 /*-----------------------------------------------------------------
-FileName: main()函数
+FileName: 1_G4RunManagerG4UImanager.cc
 Author: 刘铭
-Describe: 
+Describe: main()函数的编写，对G4RunManager和G4UImanager初步认识！
 Create: Dec 29 2020, 15:43
-Last Modify: Dec 29 2020, 
-Modifications: 0
+Last Modify: Dec 29 2020, 20:55
+Modifications: 1
 ------------------------------------------------------------------*/
 
 #include "G4RunManager.hh"
@@ -54,20 +54,44 @@ int main()
   //初始化runManager
   runManager->initialize();
   /************************************************
-     
+     建立探测器结构，创建物理过程，计算截面并且建立run.
    ************************************************/
+
   //新建一个UImanager对象，起来像是在UI界面发射粒子
   G4UImanager* UI = G4UImanager::GetUIpointer();
   UI->ApplyCommand("/run/verbose 1");
   UI->ApplyCommand("/event/verbose 1");
   UI->ApplyCommand("/tracking/verbose 1");
-  
-  //
+  /*************************************************
+     G4UImanager是用户接口管理类。在上面的代码中，ApplyCommand()被调用了3次，用来发命令给应用程序，让应用程序打印出run、事件和粒子跟踪的信息。
+     可以使用大量可用的用户接口命令对模拟过程进行控制。
+  *************************************************/
+
+  //启动一个run
   int numberOfEvent = 3;
   runManager->BeamOn(numberOfEvent);
+  /**************************************************
+     运行三个顺序处理的事件。beamOn()可以在main()函数中调用任意多次，一旦开始一次run，探测器结构和物理过程都不可以更改。
+  **************************************************/
 
   //释放RunManager
   delete runManager;
 
   return 0;
 }
+
+
+
+/*****************************************************
+   用户初始化(Initialization)和行为(Action)类
+ 必须定义的类
+	有三个类必须定义，两个是初始化类，另一个是行为类。它们必须由Geant4提供的抽象基类G4VUserDetectorConstruction,G4VUserPhysicsList和G4VUserPrimaryGeneratorAction派生。Geant4不提供这些类的缺省方法，G4RunManager在调用initialize()和BeamOn()方法的时候，检查这些类是否存在。
+ 可选行为(Action)类
+	Geant4提供了5个用户hook类：
+	G4UserRunAction
+	G4UserEventAction
+	G4UserStackingAction
+	G4UserTrackingAction
+	G4UserSteppingAction
+   这些类中，有几个虚函数允许用户在模拟程序的各个层次添加其它代码。
+*****************************************************/

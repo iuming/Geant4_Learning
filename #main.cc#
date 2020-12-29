@@ -1,0 +1,74 @@
+/*-----------------------------------------------------------------
+FileName: main()‘º¯‘Êı
+Author: ‘Áõ‘Ãú
+Describe: 
+Create: Dec 29 2020, 15:43
+Last Modify: Dec 29 2020, 20:31
+Modifications: 1
+------------------------------------------------------------------*/
+
+#include "G4RunManager.hh"
+#include "G4UImanager.hh"
+
+#include "ExN01DetectorConstruction.hh"
+#include "ExN01PhysicsList.hh"
+#include "ExN01PrimaryGeneratorAction.hh"
+
+int main()
+{
+  //‘ĞÂ‘½¨‘Ò»‘¸öRunManager‘¶Ô‘Ïó
+  G4RunManager* runManager = new G4RunManager;
+  /*********************************************
+    G4Manager‘Àà‘ÊÇGeant4‘ÄÚ‘ºË‘ÖĞ‘Î¨‘Ò»‘µÄ‘ÔË‘ĞĞ‘¹Ü‘Àí‘Àà‘£¬‘±Ø‘Ğë‘ÔÚmain‘º¯‘Êı‘ÖĞ‘ÏÔ‘Ê½‘´´‘½¨‘¡£
+    G4Manager‘±»‘´´‘½¨‘µÄ‘Í¬‘Ê±‘Æä‘Ëûgrant4‘¹Ü‘Àí‘Àà‘Í¬‘Ê±‘±»‘´´‘½¨‘£¬‘ÔÚ‘ÊÍ‘·ÅG4Manager‘¶Ô‘Ïó‘Ê±‘×Ô‘¶¯‘ÊÍ‘·Å‘£¡
+  **********************************************/
+  
+  //‘Éè‘ÖÃRunManager‘³õ‘Ê¼‘»¯‘Àà
+  runManager->SetUserInitialization(new ExN01DetectorConstruction);
+  runManager->SetUserInitialization(new ExN01PhysicsList);
+  /*********************************************
+    ‘ÔÚ‘´´‘½¨runManager‘Ö®‘ºó‘£¬‘±Ø‘Ğë‘Éè‘ÖÃ‘³õ‘Ê¼‘»¯‘ÔË‘ĞĞ‘¿Ø‘ÖÆ‘½ø‘³Ì‘µÄ‘Ïû‘Ï¢‘£¬‘Õâ‘Ğ©‘Ïû‘Ï¢‘°ü‘À¨‘£º
+        ‘Ì½‘²â‘Æ÷‘½«‘Èç‘ºÎ‘¹¹‘½¨‘£¨DetectorConstruction‘£©
+        ‘±»‘Ä£‘Äâ‘µÄ‘Ëù‘ÓĞ‘Á£‘×Ó‘ºÍ‘Ëù‘ÓĞ‘Îï‘Àí‘¹ı‘³Ì(PhysicsList)
+        ‘ÔÚ‘Ò»‘¸öevent‘ÖĞ‘³õ‘¼¶‘Á£‘×Ó‘½«‘Èç‘ºÎ‘²ú‘Éú
+        ‘Æä‘Ëû‘Ä£‘Äâ‘±Ø‘Ğë‘µÄ‘Ïû‘Ï¢
+    ExN01DetectorConstruction‘Àà‘ÊÇ‘´ÓG4UserDetectorConstruction‘Àà‘ÅÉ‘Éú‘µÄ‘£¬‘ÓÃ‘À´‘Ãè‘Êö‘Õû‘¸ö‘Ì½‘²â‘Æ÷‘µÄ‘½á‘¹¹‘£¬‘Ğè‘Òª‘¶¨‘Òå‘£º
+         ‘Ì½‘²â‘Æ÷‘µÄ‘¼¸‘ºÎ‘ĞÎ‘×´
+         ‘Ì½‘²â‘Æ÷‘Ê¹‘ÓÃ‘µÄ‘²Ä‘ÁÏ
+         ‘Ì½‘²â‘Æ÷‘µÄ‘Ãô‘¸Ğ‘Çø‘Óò
+         ‘Ãô‘¸Ğ‘Çø‘Óò‘µÄ‘¶Á‘³ö‘·½‘Ê½
+     ExN01PhysicsList‘ÊÇ‘ÓÉG4UserPhysicsList‘ÅÉ‘Éú‘µÄ‘£¬‘Ğè‘Òª‘¶¨‘Òå‘£º
+         ‘ÔÚ‘Ä£‘Äâ‘ÖĞ‘½«‘±»‘Ê¹‘ÓÃ‘µÄ‘Á£‘×Ó
+         ‘Á£‘×Ó‘µÄ‘½Ø‘¶Ï‘·¶‘Î§
+         ‘Ëù‘ÓĞ‘½«‘±»‘Ä£‘Äâ‘µÄ‘Îï‘Àí‘¹ı‘³Ì
+  **********************************************/
+
+  //‘Éè‘ÖÃRunManager‘ĞĞ‘Îª‘Àà
+  runManager->SetUserAction(new ExN01PrimaryGeneratorAction);
+  /***********************************************
+    ‘ĞÂ‘½¨‘Ò»‘¸ö‘Á£‘×Ó‘·¢‘Éú‘Æ÷‘µÄ‘Êµ‘Àı‘²¢‘´«‘µİ‘Ö¸‘Ïò‘Ëü‘µÄ‘Ö¸‘Õë‘¸ø‘ÔË‘ĞĞ‘¹Ü‘Àí‘½ø‘³Ì‘¡£
+    ExN01PrimaryGeneratorAction‘ÊÇ‘ÓÃ‘»§‘ĞĞ‘Îª‘£¨Action‘£©‘Àà‘£¬‘ÊÇ‘ÓÉG4UserPrimaryGeneratorAction‘ÅÉ‘Éú‘£¬‘ÔÚ‘¸Ã‘Àà‘ÖĞ‘£¬‘ÓÃ‘»§‘±Ø‘Ğë‘Ãè‘Êö‘³õ‘¼¶‘Á£‘×Ó‘ÊÂ‘¼ş‘µÄ‘³õ‘Ê¼‘×´‘Ì¬‘£¬‘Õâ‘¸ö‘Àà‘ÓĞ‘Ò»‘¸ö‘¹«‘ÓĞ‘Ğé‘·½‘·¨generatrPrimaries()‘£¬‘Ëü‘½«‘ÔÚ‘Ã¿‘¸ö‘ÊÂ‘¼ş‘µÄ‘¿ª‘Ê¼‘Ê±‘¿Ì‘±»‘µ÷‘ÓÃ‘¡£
+    ‘¡¾‘×¢‘Òâ‘¡¿Geant4‘²»‘Ìá‘¹©‘ÈÎ‘ºÎ‘È±‘Ê¡‘ĞĞ‘Îª‘ÓÃ‘ÓÚ‘²ú‘Éú‘Ò»‘¸ö‘³õ‘¼¶‘ÊÂ‘¼ş‘£¡
+  ************************************************/
+  
+  //‘³õ‘Ê¼‘»¯runManager
+  runManager->initialize();
+  /************************************************
+     ‘½¨‘Á¢‘Ì½‘²â‘Æ÷‘½á‘¹¹‘£¬‘´´‘½¨‘Îï‘Àí‘¹ı‘³Ì‘£¬‘¼Æ‘Ëã‘½Ø‘Ãæ‘²¢‘½¨‘Á¢run
+     ‘£¿‘£¿‘£¿‘³õ‘Ê¼‘»¯‘º¯‘Êı‘Õâ‘Ã´‘¶à‘¹¦‘ÄÜ‘£¿
+   ************************************************/
+  //‘ĞÂ‘½¨‘Ò»‘¸öUImanager‘¶Ô‘Ïó‘£¬‘Æğ‘À´‘Ïñ‘ÊÇ‘ÔÚUI‘½ç‘Ãæ‘·¢‘Éä‘Á£‘×Ó
+  G4UImanager* UI = G4UImanager::GetUIpointer();
+  UI->ApplyCommand("/run/verbose 1");
+  UI->ApplyCommand("/event/verbose 1");
+  UI->ApplyCommand("/tracking/verbose 1");
+  
+  //
+  int numberOfEvent = 3;
+  runManager->BeamOn(numberOfEvent);
+
+  //‘ÊÍ‘·ÅRunManager
+  delete runManager;
+
+  return 0;
+}
