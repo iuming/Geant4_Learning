@@ -11,4 +11,4 @@ Record some code and learning process of learning genat4!
 [G4coutG4cerr](https://github.com/iuming/Geant4_Learning/blob/main/code/2.1/3_G4coutG4cerr.cc)         
 
 ## 2.2如何定义一个探测器的几何形状
-### 2.2.1 基本概念
+### 2.2.1 [基本概念](https://github.com/iuming/Geant4_Learning/blob/main/code/2.2/1_BasicConcepts.cc)            
