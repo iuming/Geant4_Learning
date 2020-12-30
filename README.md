@@ -15,3 +15,4 @@ Record some code and learning process of learning genat4!
 ### 2.2.2 [创建一个简单的几何体](https://github.com/iuming/Geant4_Learning/blob/main/code/2.2/2_CreateaSimpleVolume.cc)                                  
 ### 2.2.3[选择一个实体](https://github.com/iuming/Geant4_Learning/blob/main/code/2.2/3_ChooseaSoild.cc)                
 ### 2.2.4[创建一个逻辑集合体](https://github.com/iuming/Geant4_Learning/blob/main/code/2.2/4_CreateaLogicalVolume.cc)                       
+### 2.2.5[放置一个几何体](https://github.com/iuming/Geant4_Learning/blob/main/code/2.2/5_PlaceaVolume.cc)                 
