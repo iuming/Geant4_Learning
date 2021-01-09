@@ -28,3 +28,16 @@ Record some code and learning process of learning genat4!
 ### 2.3.6[通过已经定义的材料定义新材料](https://github.com/iuming/Geant4_Learning/blob/main/code/2.3/6_DefineaMaterialFromBaseMaterial.cc)                           
 ### 2.3.7[打印材料信息](https://github.com/iuming/Geant4_Learning/blob/main/code/2.3/7_PrintMaterialInformation.cc)                       
 ### 2.3.8[连接Geant4材料数据库](https://github.com/iuming/Geant4_Learning/blob/main/code/2.3/8_AccessGeant4MaterialDatabase.cc)                                  
+
+## 2.4如何指定粒子
+### 2.4.1[粒子定义](https://github.com/iuming/Geant4_Learning/blob/main/code/2.4/1_SpecifyParticles.cc)                                
+### 2.4.2[截断范围](https://github.com/iuming/Geant4_Learning/blob/main/code/2.4/2_RangeCuts.cc)                   
+
+## 2.5如何指定物理过程
+### 2.5.1[物理过程](https://github.com/iuming/Geant4_Learning/blob/main/code/2.5/1_PhysicalProcesses.cc)                      
+### 2.5.2[物理过程管理](https://github.com/iuming/Geant4_Learning/blob/main/code/2.5/2_ManagerProcesses.cc)                           
+### 2.5.3[指定物理过程](https://github.com/iuming/Geant4_Learning/blob/main/code/2.5/3_SpecifyPhysicalProcesses.cc)                              
+
+## 2.6产生一个初级事件
+### 2.6.1[产生初级事件](https://github.com/iuming/Geant4_Learning/blob/main/code/2.6/1_GeneratingPrimaryEvents.cc)                        
+### 2.6.2[G4VPrimaryGenerator类](https://github.com/iuming/Geant4_Learning/blob/main/code/2.6/2_G4VPrimaryGenerator.cc)                          
