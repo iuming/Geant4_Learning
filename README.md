@@ -43,3 +43,13 @@ Record some code and learning process of learning genat4!
 ## 2.6产生一个初级事件
 ### 2.6.1[产生初级事件](https://github.com/iuming/Geant4_Learning/blob/main/code/2.6/1_GeneratingPrimaryEvents.cc)                        
 ### 2.6.2[G4VPrimaryGenerator类](https://github.com/iuming/Geant4_Learning/blob/main/code/2.6/2_G4VPrimaryGenerator.cc)                          
+
+## 2.7Geant4常规粒子源
+### 2.7.1[介绍](https://github.com/iuming/Geant4_Learning/blob/main/code/2.7/1_GeneralParticleSource.cc)                                   
+### 2.7.2[配置](https://github.com/iuming/Geant4_Learning/blob/main/code/2.7/2_ConfigurationGPS.cc)                          
+### 2.7.3[宏命令](https://github.com/iuming/Geant4_Learning/blob/main/code/2.7/3_MacroCommands.cc)                           
+### 2.7.4[宏命令示例](https://github.com/iuming/Geant4_Learning/blob/main/code/2.7/4_ExampleMacroFile.cc)                                      
+
+## 2.8如何制作可执行程序
+### 2.8.1[使用CMake构建应用程序](https://github.com/iuming/Geant4_Learning/blob/main/code/2.8/1_MakeExecutableProgram.cc)                           
+### 2.8.2[在CMake中Geant4Config.cmake使用find_package](https://github.com/iuming/Geant4_Learning/blob/main/code/2.8/2_UseofGeant4Config.cmakewithfind_packageinCMake.cc)                                  
