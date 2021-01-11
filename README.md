@@ -53,3 +53,15 @@ Record some code and learning process of learning genat4!
 ## 2.8如何制作可执行程序
 ### 2.8.1[使用CMake构建应用程序](https://github.com/iuming/Geant4_Learning/blob/main/code/2.8/1_MakeExecutableProgram.cc)                           
 ### 2.8.2[在CMake中Geant4Config.cmake使用find_package](https://github.com/iuming/Geant4_Learning/blob/main/code/2.8/2_UseofGeant4Config.cmakewithfind_packageinCMake.cc)                                  
+
+## 2.9如何建立交互界面
+### 2.9.1[介绍](https://github.com/iuming/Geant4_Learning/blob/main/code/2.9/1_SetUpanInteractiveSession.cc)                              
+### 2.9.2[可用接口](https://github.com/iuming/Geant4_Learning/blob/main/code/2.9/2_AvailableInterfaces.cc)                               
+### 2.9.3[在程序中选择接口](https://github.com/iuming/Geant4_Learning/blob/main/code/2.9/3_SelectInterface.cc)                      
+
+## 2.10如何执行程序
+### 2.10.1[介绍](https://github.com/iuming/Geant4_Learning/blob/main/code/2.10/1_ExecuteaProgram.cc)                    
+### 2.10.2[批处理模式](https://github.com/iuming/Geant4_Learning/blob/main/code/2.10/2_%E2%80%98Hard-coded%E2%80%99Batch.cc)                       
+### 2.10.3[宏文件批处理模式](https://github.com/iuming/Geant4_Learning/blob/main/code/2.10/3_BatchModewithMacroFile.cc)                            
+### 2.10.4[命令行输入模式](https://github.com/iuming/Geant4_Learning/blob/main/code/2.10/4_CommandLines.cc)                         
+### 2.10.5[一般情况](https://github.com/iuming/Geant4_Learning/blob/main/code/2.10/5_GeneralCase.cc)                           
