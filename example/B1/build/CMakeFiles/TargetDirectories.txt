@@ -1,0 +1,8 @@
+/mnt/hgfs/ShareFile/B1/build/CMakeFiles/install/local.dir
+/mnt/hgfs/ShareFile/B1/build/CMakeFiles/install/strip.dir
+/mnt/hgfs/ShareFile/B1/build/CMakeFiles/B1.dir
+/mnt/hgfs/ShareFile/B1/build/CMakeFiles/install.dir
+/mnt/hgfs/ShareFile/B1/build/CMakeFiles/exampleB1.dir
+/mnt/hgfs/ShareFile/B1/build/CMakeFiles/rebuild_cache.dir
+/mnt/hgfs/ShareFile/B1/build/CMakeFiles/edit_cache.dir
+/mnt/hgfs/ShareFile/B1/build/CMakeFiles/list_install_components.dir
