@@ -27,8 +27,12 @@
 /// \file B1RunAction.cc
 /// \brief Implementation of the B1RunAction class
 
+// 刘铭学习B1记录！
+// 时间：2021、1、14 19：47
+
 #include "B1RunAction.hh"
-#include "B1PrimaryGeneratorAction.hh"
+
+#include "B1PrimaryGeneratorAction.hh"  
 #include "B1DetectorConstruction.hh"
 // #include "B1Run.hh"
 
@@ -42,19 +46,19 @@
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-B1RunAction::B1RunAction()
+B1RunAction::B1RunAction()  // 构造函数
 : G4UserRunAction(),
-  fEdep(0.),
-  fEdep2(0.)
+  fEdep(0.),  // 初始能量沉积量
+  fEdep2(0.)  
 { 
   // add new units for dose
-  // 
+  // 能量单位换算——格瑞
   const G4double milligray = 1.e-3*gray;
   const G4double microgray = 1.e-6*gray;
   const G4double nanogray  = 1.e-9*gray;  
   const G4double picogray  = 1.e-12*gray;
    
-  new G4UnitDefinition("milligray", "milliGy" , "Dose", milligray);
+  new G4UnitDefinition("milligray", "milliGy" , "Dose", milligray); 
   new G4UnitDefinition("microgray", "microGy" , "Dose", microgray);
   new G4UnitDefinition("nanogray" , "nanoGy"  , "Dose", nanogray);
   new G4UnitDefinition("picogray" , "picoGy"  , "Dose", picogray); 
