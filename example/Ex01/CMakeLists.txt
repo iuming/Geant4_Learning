@@ -46,5 +46,5 @@ target_link_libraries(Ex01 ${Geant4_LIBRARIES})
 #     )
 # endforeach()
 
-将可执行文件安装到bin中
+#将可执行文件安装到bin中
 install(TARGETS Ex01 DESTINATION bin)
