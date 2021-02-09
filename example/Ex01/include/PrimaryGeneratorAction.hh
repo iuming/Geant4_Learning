@@ -3,7 +3,7 @@
 
 #include "G4VUserPrimaryGeneratorAction.hh"
 
-class G4particleGun;
+class G4ParticleGun;
 class G4Event;
 
 class PrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction
@@ -11,8 +11,9 @@ class PrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction
   public:
     PrimaryGeneratorAction();
     virtual ~PrimaryGeneratorAction();
+  public:
     virtual void GeneratePrimaries(G4Event*);
-    const G4ParticleGun* GetParticleGun() const {return particleGun;}
+    const G4ParticleGun* GetParticleGun() const { return particleGun;}
   private:
     G4ParticleGun* particleGun;
 };

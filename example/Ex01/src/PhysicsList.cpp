@@ -4,16 +4,18 @@
 #include "G4RadioactiveDecayPhysics.hh"
 #include "G4EmStandardPhysics.hh"
 
-PhysicsList::PhysicsList() : G4VModularPhysicsList {
+PhysicsList::PhysicsList()
+  : G4VModularPhysicsList()
+{
   RegisterPhysics(new G4DecayPhysics());
   RegisterPhysics(new G4RadioactiveDecayPhysics());
-  RegisterPhysics(new G4EmStandardPhysics());   
+  RegisterPhysics(new G4EmStandardPhysics());
 }
 
-PhysicsList::~PhysicsList() {
+PhysicsList::~PhysicsList()
+{}
 
-}
-
-void PhysicsList::SetCuts() {
+void PhysicsList::SetCuts()
+{
   G4VUserPhysicsList::SetCuts();
 }
