@@ -1,0 +1,34 @@
+# Macrofile for visualization, split with init_vis
+
+# We're using OpenGL (See vis files in examples for other drivers such as OpenInventor, DAWN, HepRApp and others
+
+/vis/open OGL 900x900-0+0
+# If you get an error when working in a VM a possible workaround is setting the display limit to an absurdly large number
+/vis/ogl/set/displayListLimit 100000
+
+# Disable auto refresh and quieten vis messages whilst scene and trajectories established
+/vis/viewer/set/autoRefresh false
+/vis/verbose errors
+
+# Draw the geometry we created
+/vis/drawVolume
+
+# Specify viewing angle
+/vis/viewer/set/viewpointThetaPhi 20. 20.
+
+# Make smooth trajectories at end of event, trajectory points as markers 2px wide
+/vis/scene/add/trajectories smooth
+/vis/modeling/trajectories/create/drawByCharge
+/vis/modeling/trajectories/drawByCharge-0/default/setDrawStepPts true
+/vis/modeling/trajectories/drawByCharge-0/default/setStepPtsSize 1
+
+# Select colour by particle ID
+/vis/modeling/trajectories/create/drawByParticleID
+/vis/modeling/trajectories/drawByParticleID-0/default/setDrawStepPts true
+
+# Superimpose all events from given run
+/vis/scene/endOfEventAction accumulate
+
+# Re-establish auto refreshing and verbosity
+/vis/viewer/set/autoRefresh true
+/vis/verbose warnings
