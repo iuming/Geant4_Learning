@@ -5,7 +5,8 @@
 #include "PhysicsList.hh"               // 物理过程类文件
 #include "PrimaryGeneratorAction.hh"    // 初级粒子发射行为类文件
 
-int main(){
+int main()
+{
     G4RunManager * runManager = new G4RunManager;                   // 创建运行管理对象runManager
     runManager -> SetUserInitialization(new DetectorConstruction);  // 对运行管理对象进行模型初始化
     runManager -> SetUserInitialization(new PhysicsList);           // 对运行管理对象进行物理过程初始化
